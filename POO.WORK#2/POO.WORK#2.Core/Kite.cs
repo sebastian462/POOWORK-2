@@ -10,7 +10,7 @@ namespace POO.WORK_2.Core
     {
           private double _b;
 
-        public Kite(string v, double a, double b, double d1, double d2) : base(v, a, d1, d2)
+        public Kite(string name, double a, double b, double d1, double d2) : base(name, a, d1, d2)
         {
             _b = ValidateB(b);
 
@@ -30,29 +30,25 @@ namespace POO.WORK_2.Core
             }
         }
 
-        public double GetArea()
+        public override double GetArea()
 
         {
-            return D1 * D2 / 2;
+            return (D1 * D2) / 2;
         }
 
-        public double GetPerimeter()
+        public override double GetPerimeter()
         {
-            return 2 * (A + B);
+            return 2 * (A + _b);
         }
 
         private double ValidateB(double b)
         {
             if (b < 0)
             {
-                throw new ArgumentException("El lado no puede ser negativo");
+                throw new Exception("El lado no puede ser negativo");
             }
             return b;
         }
 
-        public override string ToString()
-        {
-            return ($"Kite        =>  Area.....: {GetArea():F5}     Perimeter: {GetPerimeter():F5}");
-        }
     }
 }

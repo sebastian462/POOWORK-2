@@ -12,7 +12,7 @@ namespace POO.WORK_2.Core
 
         private double _b;
 
-        public Rectangle (String v, double a, double b) : base(v, a)
+        public Rectangle (String name, double a, double b) : base(name, a)
         {
            _b = ValidateB(b);
         }
@@ -31,12 +31,12 @@ namespace POO.WORK_2.Core
                 }
         }
             
-        public double GetArea()
+        public override double GetArea()
         {
             return A * _b;
         }
 
-        public double GetPerimeter()
+        public override double GetPerimeter()
         {
           return  2 * (A + _b);
         }
@@ -49,12 +49,6 @@ namespace POO.WORK_2.Core
             }
             return b;
         }
-
-        public override string ToString()
-        {
-            return ($"Rectangle   =>  Area.....: {GetArea():F5}    Perimeter: {GetPerimeter():F5}");
-        }
-        
 
 
 

@@ -13,7 +13,7 @@ namespace POO.WORK_2.Core
             private double _d1;
             private double _d2;
 
-        public Rhombus(string v, double a, double d1, double d2) : base(v, a)
+        public Rhombus(string name, double a, double d1, double d2) : base(name, a)
         {
             _d1 = ValidateD1(d1);
             _d2 = ValidateD2(d2);
@@ -47,13 +47,13 @@ namespace POO.WORK_2.Core
 
         }
 
-        public double GetArea()
+        public override double GetArea()
 
         {
             return (_d1 * _d2) / 2;
         }
 
-        public double GetPerimeter()
+        public override double GetPerimeter()
 
         {
             return 4 * A;
@@ -77,11 +77,6 @@ namespace POO.WORK_2.Core
             return d2;
         }
 
-        public override string ToString()
-
-        {
-            return ($"Rhombus     =>  Area.....: {GetArea():F5}     Perimeter: {GetPerimeter():F5}");
-        }
 
 
 

@@ -1,12 +1,12 @@
 ﻿namespace POO.WORK_2.Core;
 
-public class Square
-{
+public class Square : GeometricFigure
+{    
     private double _a;
 
-
-    public  Square(string v, double a)
-    {
+    public Square(string name, double a)  : base(name)
+    {    
+        Name = name;
         _a = ValidateA(a); 
     }
     public double A
@@ -22,13 +22,13 @@ public class Square
     }
 
 
-    public double GetArea()
+    public override double GetArea()
     {
         return _a * _a;
     }
 
 
-    public double GetPerimeter()
+    public override double GetPerimeter()
     {
         return 4 * _a;
     }
@@ -38,20 +38,11 @@ public class Square
     {
         if (a < 0)
         {
-            throw new ArgumentException("El lado no puede ser negativo");
+            throw new Exception("El lado no puede ser negativo");
         }
         return a;
 
     }
-
-    public override string ToString()
-    {
-        return $"Square      =>  Área.....: {GetArea():F5}    Perímetro: {GetPerimeter():F5}";
-    }
-
-
-
-
 }
 
 

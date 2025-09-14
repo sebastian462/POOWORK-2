@@ -11,7 +11,7 @@ namespace POO.WORK_2.Core
 
         private double _h;
 
-        public Parallelogram(string v, double a, double b, double h) : base(v, a, b)
+        public Parallelogram(string name, double a, double b, double h) : base(name, a, b)
         {
             _h = ValidateH(h);
         }
@@ -30,12 +30,13 @@ namespace POO.WORK_2.Core
             }       
         }
 
-        public double GetArea()
+        public override double GetArea()            
         {
-            return A * _h;
+
+            return B * _h;
         }
 
-        public double GetPerimeter()
+        public override double GetPerimeter()
         {
             return 2 * (A + B);
         }
@@ -48,11 +49,7 @@ namespace POO.WORK_2.Core
             }
             return h;
         }
-
-        public override string ToString()
-        {
-            return ($"Parallelogram =>  Area.....: {GetArea():F5}    Perimeter: {GetPerimeter():F5}");
-        }
-
     }
 }
+
+
