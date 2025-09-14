@@ -10,7 +10,7 @@ namespace POO.WORK_2.Core
     {
         private double _d;
 
-        public Trapeze(string name, double a, double b, double d, double c, double h) : base(name, a, b, c, h)
+        public Trapeze(string name, double a, double b, double c, double d, double h) : base(name, a, b, c, h)
         {
             _d = ValidateD(d);
          
@@ -38,7 +38,7 @@ namespace POO.WORK_2.Core
         public override double GetPerimeter()
         {   
             
-            return A + B + C + _d;
+            return A + B + C + D;
         }
 
         private double ValidateD(double d)

@@ -11,7 +11,7 @@ namespace POO.WORK_2.Core
          private double _c;
          private double _h;
 
-        public Triangle(string name, double c, double h, double b, double a ) : base(name, a, b)
+        public Triangle(string name, double a, double b, double c, double h ) : base(name, a, b)
 
         {    
             _c = ValidateC(c);

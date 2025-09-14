@@ -10,7 +10,7 @@ namespace POO.WORK_2.Core
     {
           private double _b;
 
-        public Kite(string name, double a, double b, double d1, double d2) : base(name, a, d1, d2)
+        public Kite(string name, double a,  double d1, double d2, double b) : base(name, a, d1, d2)
         {
             _b = ValidateB(b);
 
@@ -38,7 +38,7 @@ namespace POO.WORK_2.Core
 
         public override double GetPerimeter()
         {
-            return 2 * (A + _b);
+            return 2 * (A + B);
         }
 
         private double ValidateB(double b)
